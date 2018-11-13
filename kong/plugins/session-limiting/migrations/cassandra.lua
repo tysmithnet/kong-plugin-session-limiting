@@ -1,6 +1,6 @@
 return {
   {
-    name = "2015-08-03-132400_init_sessionlimiting",
+    name = "session_limiting_cassandra0",
     up = [[
       CREATE TABLE IF NOT EXISTS sessionlimiting_metrics(
         api_id uuid,
@@ -16,7 +16,7 @@ return {
     ]]
   },
   {
-    name = "2016-07-25-471385_sessionlimiting_policies",
+    name = "session_limiting_cassandra1",
     up = function(_, _, dao)
       local rows, err = dao.plugins:find_all {name = "session-limiting"}
       if err then
@@ -56,7 +56,7 @@ return {
     end
   },
   {
-    name = "2017-11-30-120000_add_route_and_service_id",
+    name = "session_limiting_cassandra2",
     up = [[
       DROP TABLE sessionlimiting_metrics;
       CREATE TABLE sessionlimiting_metrics(
