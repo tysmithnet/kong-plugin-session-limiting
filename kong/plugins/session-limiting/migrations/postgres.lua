@@ -123,12 +123,5 @@ return {
       $$ LANGUAGE 'plpgsql';
     ]],
     down = nil,
-  },
---  {
---    name = "2017-11-30-130000_remove_api_id",
---    up = [[
---      ALTER TABLE sessionlimiting_metrics DROP COLUMN api_id;
---    ]],
---    down = nil,
---  },
+  }
 }
