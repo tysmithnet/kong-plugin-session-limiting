@@ -33,7 +33,6 @@ local function get_usage(conf, identifier, current_timestamp, limits)
   for name, limit in pairs(limits) do
     local current_usage, err = policies[conf.policy].usage(conf, identifier, current_timestamp, name)
     if err then
-      kong.log("Error getting usage")
       return nil, nil, err
     end
 
@@ -47,7 +46,6 @@ local function get_usage(conf, identifier, current_timestamp, limits)
     }
 
     if remaining <= 0 then
-      kong.log("limiting session");
       stop = name
     end
   end

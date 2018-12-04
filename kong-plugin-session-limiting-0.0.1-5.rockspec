@@ -1,5 +1,5 @@
 package = "kong-plugin-session-limiting"
-version = "0.0.1-4"
+version = "0.0.1-5"
 -- TODO: This is the name to set in the Kong configuration `plugins` setting.
 -- Here we extract it from the package name.
 local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "session-limiting"
